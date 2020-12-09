@@ -118,3 +118,6 @@ mathlib/0.0.1: Created package revision 5f581dcf3ed2dc5f4c41b6818faded1d
 * `conan` will ensure that the cached build is used, and we do not spend unnecessary time rebuilding the mathlib.
 * For a more practical usage, we can package the `mathlib` lib using Conan and upload it to a repository (eg: JFrog) and reference that in projects that depend on it.
 
+
+## References
+* https://docs.conan.io/en/latest/introduction.html
