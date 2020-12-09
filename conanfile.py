@@ -9,7 +9,7 @@ class MathlibConan(ConanFile):
     generators = "cmake"
 
     def source(self):
-        self.run("git clone https://github.com/navops29/demo-mathlib.git")
+        self.run("git clone https://github.com/navops29/demo-mathlib.git mathlib")
 
     def build(self):
         cmake = CMake(self)
