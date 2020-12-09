@@ -5,6 +5,7 @@ class MathlibConan(ConanFile):
     name = "mathlib"
     version = "0.0.1"
     description = "Simple math lib for calc options"
+    url = "https://github.com/navops29/demo-mathlib"
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
 
