@@ -5,7 +5,6 @@ pipeline {
 			steps {
 				//invoke sonar plugin
 			    script {
-			      sh "git clone https://github.com/navops29/sampleci.git"
                   def tagCommand = 'git describe --exact-match --tags HEAD'
                   def rc = sh(script: tagCommand, returnStatus: true)
                   def tagExists = (rc == 0)
