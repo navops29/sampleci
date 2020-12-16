@@ -1,12 +1,7 @@
 pipeline {
-	agent {
-		node {
-			label app-worker
-		}
-	}
+	agent any
 	stages {
 		stage('Sonarqube') {
-		    
 		    steps {
 		        sh "echo sonarr"
 		    }
@@ -70,10 +65,8 @@ pipeline {
 						}
 					}
 				}
-
 				stage ('MacOSX') {
-					agent any
-					}								
+					agent any							
 					stages {
 						stage('Build') {
 							steps {
