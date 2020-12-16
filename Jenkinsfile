@@ -108,9 +108,11 @@ pipeline {
 		}
 		stage('Upload to Artifactory'){
 			steps {
-				unstash 'signed-win-pkg'
-				unstash 'signed-osx-pkg'
-				sh 'echo upload to artifactory'
+				//unstash 'signed-win-pkg'
+				//unstash 'signed-osx-pkg'
+				sh 'echo upload windows artifacts'
+				sh 'echo upload macosx artifacts'
+
 			}
 		}
 		stage('Deploy to QA'){
