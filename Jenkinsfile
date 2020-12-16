@@ -126,6 +126,9 @@ pipeline {
 			}
 		}
 		stage('Publish'){
+			 when {
+            	branch "master"
+        	}
 			steps {
 				sh "echo publishing stuff"
 			}
