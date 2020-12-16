@@ -122,13 +122,13 @@ pipeline {
 		}
 		stage('Functional Testing'){
 			steps {
-				sh "echo running functional tests"
+				sh "echo running functional tests for -${env.BRANCH_NAME}- branch"
 			}
 		}
 		stage('Publish'){
 		    when {
 		        expression {
-		     	   return env.BRANCH == 'master'
+		     	   return env.BRANCH_NAME == 'master'
 		    	}
 		    }			
 			steps {
