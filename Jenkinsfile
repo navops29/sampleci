@@ -115,7 +115,7 @@ pipeline {
 		}
 		stage('ansible-qa'){
 			steps {
-				sh echo "ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'inventories/qa/hosts', playbook: 'app.yml')"
+				sh "echo ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'inventories/qa/hosts', playbook: 'app.yml')"
 			}
 		}
 		stage('Functional Testing'){
