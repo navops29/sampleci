@@ -89,7 +89,7 @@ pipeline {
 								// reads version from the VERSION file
 								// and creates platform specific package
 								sh 'echo python create-package.py'
-								stash includes: 'package/*', name: 'osx-pkg'
+								//stash includes: 'package/*', name: 'osx-pkg'
 							}
 						}
 						stage('Sign & Notarize') {
@@ -106,14 +106,14 @@ pipeline {
 				}
 			}
 		}
-		stage('upload-to-artifactory'){
+		stage('Upload to Artifactory'){
 			steps {
 				unstash 'signed-win-pkg'
 				unstash 'signed-osx-pkg'
 				sh 'echo upload to artifactory'
 			}
 		}
-		stage('ansible-qa'){
+		stage('Deploy to QA'){
 			steps {
 				sh "echo ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'inventories/qa/hosts', playbook: 'app.yml')"
 			}
