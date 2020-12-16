@@ -127,7 +127,9 @@ pipeline {
 		}
 		stage('Publish'){
 		    when {
-		        env.BRANCH == 'master'
+		        expression {
+		     	   return env.BRANCH == 'master'
+		    	}
 		    }			
 			steps {
 				sh "echo publishing stuff"
