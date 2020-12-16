@@ -33,7 +33,7 @@ pipeline {
 						stage('Build') {
 							steps {
 								checkout scm
-								unstash version
+								unstash 'version'
 								// we assume the build scripts
 								// use VERSION file to identify
 								// version of app
@@ -71,7 +71,7 @@ pipeline {
 						stage('Build') {
 							steps {
 								checkout scm
-								unstash version
+								unstash 'version'
 								// we assume the build scripts
 								// use VERSION file to identify
 								// version of app
