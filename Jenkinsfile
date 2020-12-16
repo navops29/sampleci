@@ -88,7 +88,7 @@ pipeline {
 								// a python script that calls
 								// reads version from the VERSION file
 								// and creates platform specific package
-								sh 'python create-package.py'
+								sh 'echo python create-package.py'
 								stash includes: 'package/*', name: 'osx-pkg'
 							}
 						}
